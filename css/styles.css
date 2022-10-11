@@ -1,0 +1,685 @@
+/*===== POLICE GOOGLE  =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*=====  CSS =====*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Couleurs ==========*/
+    --title-color: #0B0B0B;
+    --text-color: #393B3B;
+    --text-color-light: #818181;
+    --container-color: #F9F9F9;
+    --container-color-alt: #E0E0E0;
+    --body-color: #fefefe;
+
+    /*========== Police et typographie ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /*========== Police ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Marges ==========*/
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+
+    /*========== Profondeur (z index) ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== BASE ==========*/
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+/*========== DARK MODE ==========*/
+body.dark-theme {
+    --title-color: #F4F4F4;
+    --text-color: #AEAEAE;
+    --container-color: #191919;
+    --container-color-alt: #151515;
+    --body-color: #3A3A3A;
+}
+
+/*========== Bouton pour changer de mode ==========*/
+.change_theme {
+    display: inline-block;
+    border: 2px solid var(--text-color);
+    color: var(--title-color);
+    padding: 1.26rem 1.26rem;
+    border-radius: .25rem;
+    transition: .3s;
+    font-weight: var(--font-medium-);
+    margin-top: var(--mb-3);
+    cursor: pointer;
+}
+
+.change_theme:hover {
+    background-color: var(--text-color);
+    color: var(--container-color);
+}
+
+/*========== Bouton pour PDF ==========*/
+.pdf_gen {
+    display: inline-block;
+    border: 2px solid var(--text-color);
+    color: var(--title-color);
+    padding: 1.26rem 1.26rem;
+    border-radius: .25rem;
+    transition: .3s;
+    font-weight: var(--font-medium-);
+    margin-top: var(--mb-3);
+    cursor: pointer;
+}
+
+.pdf_gen:hover {
+    background-color: var(--text-color);
+    color: var(--container-color);
+}
+
+
+
+/*============CSS PRINCIPAL=====*/
+body {
+    margin: 0 0 var(--header-height) 0;
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    cursor:pointer;
+}
+
+#lightbox {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2vh 2vw;
+    background-color: #0008;
+    display: none;
+}
+
+#lightbox div {
+    background-image: url(img/profil.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-clip: content-box;
+    height: 100%;
+    width: 100%;
+}
+
+/*========== CLASSE CSS ==========*/
+.section {
+    padding: 0.5rem 0;
+}
+
+.section-titre {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    text-align: center;
+    margin-bottom: var(--mb-3);
+}
+
+/*==========  ==========*/
+.bd-conteneur {
+    max-width: 968px;
+    width: calc(100% - 3rem);
+    margin-left: var(--mb-3);
+    margin-right: var(--mb-3);
+}
+
+.bd-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+/*========== NAV ==========*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 968px) {
+    .nav__menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        padding: 2rem 1.5rem;
+        background-color: var(--body-color);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+        border-radius: 1rem 1rem 0 0;
+        z-index: var(--z-fixed);
+        transition: .1s;
+    }
+}
+
+.nav__logo,
+.nav__toggle {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__toggle {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.nav__item {
+    text-align: center;
+}
+
+.nav__liste {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--smaller-font-size);
+    color: var(--font-medium);
+}
+
+.nav__link:hover {
+    color: var(--title-color);
+}
+
+.nav__icone {
+    font-size: 1.2rem;
+    margin-bottom: var(--mb-1);
+}
+
+.voir-menu {
+    bottom: var(--header-height);
+}
+
+/* Lien du menu */
+.lien-menu {
+    color: var(--title-color);
+}
+
+/*========== HOME ==========*/
+.home {
+    position: relative;
+}
+
+.home-conteneur {
+    gap: 3rem;
+}
+
+.home__donnees {
+    gap: .5rem;
+    text-align: center;
+}
+
+.home__img {
+    width: 120px;
+    height: 160px;
+    border-radius: 50%;
+    justify-self: center;
+    margin-bottom: var(--mb-1);
+}
+
+.home_titre {
+    font-size: var(--h1-font-size);
+}
+
+.home__metier {
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.home__infos {
+    gap: 1rem;
+}
+
+.home__information {
+    display: flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+}
+
+.email {
+    cursor: pointer;
+}
+
+
+.home__icone {
+    font-size: 1.2rem;
+}
+
+.test-bouton {
+    /*padding: 0 0;*/
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.home__bouton_pdf {
+    display: inline-block;
+    border: 2px solid var(--text-color);
+    color: var(--title-color);
+    padding: 1rem 1rem;
+    border-radius: .25rem;
+    transition: .3s;
+    font-weight: var(--font-medium-);
+    margin-top: var(--mb-3);
+}
+
+.home__bouton_pdf:hover {
+    background-color: var(--text-color);
+    color: var(--container-color);
+}
+
+/*========== SOCIAL ==========*/
+.social__conteneur {
+    grid-template-columns: max-content;
+    gap: 1rem;
+}
+
+.social__url {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+
+.social__url:hover {
+    color: var(--title-color);
+}
+
+.social__icone {
+    font-size: 1.3rem;
+    margin-right: .30rem;
+}
+
+/*========== PROFILE ==========*/
+.profil__description {
+    text-align: center;
+}
+
+/*========== ETUDES & EXPERIENCE ==========*/
+.etudes__contenu,
+.exp__contenu {
+    display: flex;
+}
+
+.etudes__date,
+.exp__date {
+    padding-right: 1rem;
+}
+
+#overflow1,
+#overflow2 {
+    overflow: hidden;
+} /*empeche débordement de la derniere ligne*/
+
+.etudes__rounder,
+.exp__rounder {
+    position: relative;
+    display: block;
+    width: 17px;
+    height: 17px;
+    background-color: var(--text-color-light);
+    border-radius: 50%;
+    margin-top: .25rem;
+}
+
+.etudes__ligne,
+.exp__ligne {
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: var(--text-color-light);
+    transform: translate(7px, 0);
+}
+
+.etudes__donnee,
+.exp__donnee {
+    gap: .5rem;
+}
+
+.etudes__titre,
+.exp__titre {
+    font-size: var(--h3-font-size);
+}
+
+etudes__ecole,
+.exp__lieu {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+}
+
+.etudes__annee,
+.exp__annee {
+    font-size: var(--small-font-size);
+}
+
+/*========== COMPETENCES & LANGUES ==========*/
+.compet_contenu,
+.lang__contenu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
+
+.li__nom,
+.lang__nom {
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-1);
+}
+
+.compet_cercle,
+.lang__cercle {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    margin-right: .75rem;
+}
+
+/*========== CERTIFICATS ==========*/
+.certif__titre {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.certif__titre:hover {
+    color: var(--title-color);
+}
+
+
+/*========== REFERENCES ==========
+.ref_contenu{
+    gap: .30rem;
+}
+
+.ref__soustitre{
+    color: var(--text-color-light);
+}
+
+.ref__soustitre,
+.ref__contact{
+    font-size: var(--smaller-font-size);
+}
+
+.ref__titre{
+    font-size: var(--h3-font-size);
+}*/
+/*========== HOBBYS ==========*/
+.hob__conteneur {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: var(--mb-2);
+}
+
+.hob__contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.hob__icone {
+    font-size: 1.6rem;
+    color: var(--text-color-light);
+    margin-bottom: .25rem;
+}
+
+/* Retourner en haut de la page */
+.hautpage {
+    position: fixed;
+    right: 1.2rem;
+    bottom: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem;
+    background-color: var(--container-color-alt);
+    border-radius: .3rem;
+    z-index: var(--z-tooltip);
+    transition: .5s;
+    visibility: hidden;
+}
+
+.haut__page__icone {
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.montrer-fleche {
+    visibility: visible;
+    bottom: 4rem;
+}
+
+/*========== MEDIA QUERIES ==========*/
+/* Classes modifiées pour les écrans large type tablette et ordinateur (à partir de 768px, largeur d'un iPad mini) */
+@media screen and (min-width: 768px) {
+    body {
+        margin: 4rem 0;
+    }
+
+    .bd-conteneur {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header,
+    .hautpage {
+        display: none;
+    }
+
+    .cv {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        background-color: var(--container-color);
+        box-shadow: 0 0 6px rgba(11, 11, 11, .10);
+    }
+
+    .cv__gauche {
+        background-color: var(--container-color-alt);
+    }
+
+    .cv__gauche,
+    .cv__droite {
+        padding: 0 1.4rem;
+    }
+
+    .section-titre,
+    .profil__description {
+        text-align: initial;
+    }
+
+    .home__conteneur {
+        gap: 1.4rem;
+    }
+
+    .home__bouton-mode {
+        display: none;
+    }
+
+    /*.ref__conteneur{
+        grid-template-columns: repeat(2, 1fr);
+    } ===== inutile car pas encore de ref*/
+
+    .lang__contenu {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: normal;
+    }
+
+    .hob__conteneur {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: normal;
+    }
+
+
+}
+
+@media print {
+    
+    /*========== Réduire taille police pour PDF ==========*/
+    body.cv__a {
+        --h1-font-size: .900rem;
+        --h2-font-size: .850rem;
+        --h3-font-size: .800rem;
+        --normal-font-size: .750rem;
+        --small-font-size: .700rem;
+        --smaller-font-size: .600rem;
+    }
+
+    /*====Cacher les boutons lors de l'impression====*/
+    .pdf_gen,
+    .cv__a .change_theme {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /*========== Version modifiée pour réduire la taille et imprimer en A4 ==========*/
+    .cv__a .bd-conteneur {
+        max-width: 595px;
+        /*car pour imprimer en format A4 une image de 100 dpi, il faut une taille de 596 X 842 pixels/pouce*/
+    }
+
+    .cv__a .section-titre {
+        margin-bottom: .75rem;
+    }
+
+    .cv__a .cv__gauche,
+    .cv__a ..cv__droite {
+        padding: 0 1rem;
+    }
+
+    .cv__a .home__img {
+        width: 70px;
+        height: 90px;
+    }
+
+    .cv__a .home__conteneur {
+        gap: 1.5rem;
+    }
+
+    ..cv__a .home__donnees {
+        gap: .25rem;
+    }
+
+    .cv__a .home__infos,
+    /*======================A VERIFIER========================*/
+    .cv__a .social__conteneur {
+        gap: .75rem;
+    }
+
+    .cv__a .home__icone,
+    .cv__a .social__icone {
+        font-size: 1rem;
+    }
+
+    .cv__a .etudes__conteneur,
+    .cv__a .exp__conteneur,
+    .cv__a .certif__conteneur {
+        gap: 1rem;
+    }
+
+    .cv__a .etudes__date,
+    .cv__a .exp__date {
+        padding-right: .5rem;
+    }
+
+    .cv__a .etudes__rounder,
+    .cv__a .exp__rounder {
+        width: 11px;
+        height: 11px;
+        margin-top: .20rem;
+    }
+
+    .cv__a .etudes__ligne,
+    .cv__a .exp__ligne {
+        width: 1px;
+        height: 100%;
+        transform: translate(5px, 0);
+    }
+
+    .cv__a .etudes__donnees,
+    .cv__a .exp__donnees {
+        gap: .25rem;
+    }
+
+    .cv__a .li__nom,
+    .cv__a .lang__nom {
+        margin-bottom: var(--mb-1);
+    }
+
+    .cv__a .hob_conteneur {
+        column-gap: 2.5rem;
+    }
+    /*============FIN GENERATION PDF=====*/
+}

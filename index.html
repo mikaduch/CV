@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!--=BALISES OBLIGATOIRES + REFERENCEMENT===-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitæ of Mikael Duvillier</title>
+    <meta name="description" content="CV of Mikael Duvillier, young computer scientist in HEH Mons">
+    <meta name="keyword" content="CV, HEH, Informatician, ">
+    <meta name="author" content="Mikael Duvillier">
+    <meta name="Language" CONTENT="fr"/>
+    <meta name="robots" content="index,follow"/>
+    <!--========== ICONES ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--=========JQUERY====-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--     <script src="js/html2pdf.bundle.min.js"></script>    -->
+    <!--=========Javascript====
+    <script src="js/main.js"></script>-->
+    <!--========PLUG-IN JQUERY==========
+    <script src="js/jquery-printthis/printThis.js"></script>
+    <script src="js/jquery-print-plugin-master/lib/jquery.printThis.js"></script>-->
+</head>
+
+<body>
+    <!---->
+    <!--========== HEADER ==========-->
+    <header class="header" id="header">       <!-- note : le header n'est pas necessaire dans ce cas, on peut le retirer et laisser seulement le nav mais attention au CSS-->
+        <nav class="nav bd-conteneur">
+            <a href='#' class="nav__logo">Menu</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__liste">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class='bx bx-home nav__icone'></i>Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#profil" class="nav__link">
+                            <i class='bx bx-user nav__icone'></i>Profil
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#etudes" class="nav__link">
+                            <i class='bx bx-book nav__icone'></i>Etudes
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#competences" class="nav__link">
+                            <i class='bx bx-receipt nav__icone">'></i>Compétences
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">
+                            <i class='bx bx-briefcase-alt nav__icone'></i>Expérience
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#certificats" class="nav__link">
+                            <i class='bx bx-award nav__icone'></i>Certificats
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--========== MAIN ===========-->
+    <main class="l-main bd-conteneur">
+        <!-- Elements generes en PDF -->
+        <div class="cv" id="zone-pdf">
+            <div class="cv__gauche">
+
+                <!--========== HOME ==========-->
+                <section class="home" id="home">
+                    <div class="home__conteneur section bd-grid">
+                        <div class="home__donnees bd-grid">
+                            <img src="img/profil.jpg" alt="photo de profil" class="home__img" id="home__img">
+                            <h1 class="home__titre">Mikael <b>DUVILLIER</b></h1>
+                            <h3 class="home__metier">Étudiant en informatique</h3>
+                        </div>
+                        <div>
+                            <div class="test-bouton">
+                                <!-- Boutton générateur de PDF-->
+                                <div class="test-bouton">
+                                    <i title="Bouton PDF" class='bx bxs-download pdf_gen' id="bouton-pdf">
+                                        <a href="javascript:boutonPDF"></a>
+                                        <!--<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>-->
+                                    </i>
+
+                                    <!--<a download="" href="pdf/ResumeCv.pdf" class="home__bouton_pdf">Download</a>*/-->
+                                </div>
+                                <!-- Boutton changement de mode-->
+                                <div class="test-bouton">
+                                    <i title="Mode" class='bx bx-moon change_theme' id="dark-theme"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home__infos bd-grid">
+                            <span class="home__information">
+                                <i class='bx bx-map home__icone'></i>7540 Kain <br>Belgique
+                            </span>
+                            <span class="home__information email" onclick="javascript:window.location.href = 'mailto:mikael.duvillier@gmail.com';">
+                                <!--============== ENVOYER EMAIL ================-->
+                                <i class='bx bx-envelope home__icone'></i>mikael.duvillier@gmail.com
+                            </span>
+                            <span class="home__information">
+                                <i class='bx bx-phone home__icone'></i>+32 491 20 93 60
+                            </span>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!--========== SOCIAL ==========-->
+                <section class="social section">
+                    <h2 class="section-titre">RÉSEAUX SOCIAUX</h2>
+                    <div class="social__conteneur bd-grid">
+                        <a href="https://www.linkedin.com/in/mikael-duvillier-98746611a" target="_blank" class="social__url">
+                            <i class="bx bxl-linkedin-square social__icone"></i>@mikaelduvillier
+                        </a>
+                        <a href="https://gitlab.com/mikaduch" target="_blank" class="social__url">
+                            <i class='bx bxl-gitlab .social__icone'></i>@Mikaduch
+                        </a>
+                        <!--<a href="https://github.com/" target="_blank" class="social__url">
+                            <i class='bx bxl-github .social__icone'></i>
+                        </a>-->
+                        <!--
+                        <a href="https://fr-fr.facebook.com/Mikael-Duvillier" target="_blank" class="social__url">
+                            <i class="bx bxl-facebook .social__icone"></i>@mikaelduvillier
+                        </a>
+                        <a href="https://twitter.fr/Mikael_Duvillier" target="_blank" class="social__url">
+                            <i class='bx bxl-twitter .social__icone'></i>@mikaelduvillier
+                        </a>
+                        -->
+                    </div>
+                </section>
+
+                <!--========== PROFIL ==========-->
+                <section class="profil section" id="profil">
+                    <h2 class="section-titre">Profil</h2>
+                    <p class="profil__description">J'ai <b class="age"> </b> ans. J'ai de l’expérience en tant que <b>peintre, caissier et serveur</b>. J'ai également été <b>technicien de maintenance et barman</b>. Je cherche un job dans ces domaines mais également dans la vente et dans les métiers d’accueil. Le métier de <b>caissier-réassort</b> m'intéresse également. Possédant le <b>permis</b>, je suis ouvert à découvrir le métier de livreur. <br />Je suis disponible durant les vacances scolaires ainsi que les week-ends et en soirée. Je suis domicilié à <b>Tournai</b> mais je cherche aussi dans les régions de Péruwelz, Mons et leurs alentours.</p>
+                </section>
+
+                <!--========== ETUDES ==========-->
+                <section class="etudes section" id="etudes">
+                    <h2 class="section-titre">Etudes</h2>
+                    <div class="etudes__conteneur bd-grid">
+                        <div class="etudes__contenu">
+                            <div class="etudes__date">
+                                <span class="etudes__rounder"></span>
+                                <span class="etudes__ligne"></span>
+                            </div>
+                            <div class="etudes__donnee bd-grid">
+                                <h3 class="etudes__titre">Informatique en télécommunications et réseaux</h3>
+                                <span class="etudes__ecole">Haute École en Hainaut - Campus technique de Mons</span>
+                                <span class="etudes__annee">2019 - actuel</span>
+                            </div>
+                        </div>
+                        <div class="etudes__contenu">
+                            <div class="etudes__date">
+                                <span class="etudes__rounder"></span>
+                                <span class="etudes__ligne"></span>
+                            </div>
+                            <div class="etudes__donnee bd-grid">
+                                <h3 class="etudes__titre">Début de cycle de bachelier en sciences physiques</h3>
+                                <span class="etudes__ecole">Université de Mons</span>
+                                <span class="etudes__annee">2016 - 2018</span>
+                            </div>
+                        </div>
+                        <div class="etudes__contenu">
+                            <div class="etudes__date" id="overflow1">
+                                <span class="etudes__rounder"></span>
+                                <span class="etudes__ligne"></span>
+                            </div>
+                            <div class="etudes__donnee bd-grid">
+                                <h3 class="etudes__titre">Enseignement secondaire</h3>
+                                <span class="etudes__ecole">Collège Notre-Dame de la Tombe de Kain</span>
+                                <span class="etudes__annee">2010 - 2016</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+            </div>
+
+            <div class="cv__droite">
+                <!--========== EXPERIENCE ==========-->
+                <!--Note : rajouter une liste reprenant tous les hobbys et y assigner une icone -->
+                <section class="experience section" id="experience">
+                    <h2 class="section-titre">Expérience</h2>
+                    <div class="exp__conteneur bd-grid">
+                        <div class="exp__contenu">
+                            <div class="exp__date">
+                                <span class="exp__rounder"></span>
+                                <span class="exp__ligne"></span>
+                            </div>
+                            <div class="exp__donnee bd-grid">
+                                <h3 class="exp__titre">Commis de salle et caissier</h3>
+                                <span class="exp__lieu">Pairi daiza</span>
+                                <span class="exp__annee">Eté 2019</span>
+                                <p class="exp__description">- Embauché suite à une formation et un stage à Pairi Daiza<br />- Serveur, caissier et barman à l'Octopus<br />- Contact direct avec le client</p>
+                            </div>
+                        </div>
+                        <div class="exp__contenu">
+                            <div class="exp__date">
+                                <span class="exp__rounder"></span>
+                                <span class="exp__ligne"></span>
+                            </div>
+                            <div class="exp__donnee bd-grid">
+                                <h3 class="exp__titre">Technicien de maintenance et peintre</h3>
+                                <span class="exp__lieu">Home Saint-joseph Herseaux</span>
+                                <span class="exp__annee">2018 - 2019</span>
+                                <p class="exp__description">- Divers travaux de peinture et de maintenance<br />- Formation par mes collègues<br />- Contact permanent avec les résidents</p>
+                            </div>
+                        </div>
+                        <div class="exp__contenu">
+                            <div class="exp__date" id="overflow2">
+                                <span class="exp__rounder"></span>
+                                <span class="exp__ligne"></span>
+                            </div>
+                            <div class="exp__donnee bd-grid">
+                                <h3 class="exp__titre">Aide peintre</h3>
+                                <span class="exp__lieu">Le Logis Tournaisien</span>
+                                <span class="exp__annee">2013 - 2018 + 2021</span>
+                                <p class="exp__description">-Job étudiant estival dans des logements sociaux</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--========== COMPETENCES  ==========-->
+                <section class="competences section" id="competences">
+                    <h2 class="section-titre">Compétences</h2>
+                    <div class="compet_contenu bd-grid">
+                        <div>
+                            <h4>Développement web</h4>
+                            <ul class="compet_donnee">
+                                <li class="li__nom">
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>SQL
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>jQuery
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>JavaScript
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>CSS3
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>HTML5
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Développement d'application</h4>
+                            <ul class="compet_donnee">
+                                <li class="li__nom">
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>Python
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>Java
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>C#
+                                </li>
+                                <li class="li__name">
+                                    <span class="compet_cercle"></span>C
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Robotique</h4>
+                            <ul class="compet_donnee">
+                                <li class="li__nom">
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>Arduino
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>Raspberry Pi
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Design</h4>
+                            <ul class="compet_donnee">
+                                <li class="li__nom">
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>Proteus
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>Eagle
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>MikroC
+                                </li>
+                                <li class="li__nom">
+                                    <span class="compet_cercle"></span>TinkerCad
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--===Autre manière de faire===-->
+                        <!--<ul class="compet_donnee">
+                            <li class="compet_nom">
+                                <span class="compet_cercle"></span>HTML5
+                            </li>
+                            <li class="compet_nom">
+                                <span class="compet_cercle"></span>CSS3
+                            </li>
+                            <li class="compet_nom">
+                                <span class="compet_cercle"></span>JavaScript
+                            </li>
+                            <li class="compet_nom">
+                                <span class="compet_cercle"></span>jQuery
+                            </li>
+                            <li class="compet_nom">
+                                <span class="compet_cercle"></span>SQL
+                            </li>
+                        </ul>-->
+                    </div>
+                </section>
+
+
+                <!--========== LANGUES ==========-->
+                <section class="langues section">
+                    <h2 class="section-titre">Langues</h2>
+                    <div class="lang__conteneur">
+                        <ul class="lang__contenu bd-grid">
+                            <li class="lang__nom">
+                                <span class="lang__cercle"></span>Français : <br>Langue maternelle
+                            </li>
+                            <li class="lang__nom">
+                                <span class="lang__cercle"></span>Anglais : <br>Couramment parlé
+                            </li>
+                            <li class="lang__nom">
+                                <span class="lang__cercle"></span>Néerlandais : <br>Notions de base
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!--========== HOBBYS ==========-->
+                <section class="hobbys section">
+                    <h2 class="section-titre">Hobbys</h2>
+                    <div class="hob__conteneur bd-grid">
+                        <div class="hob__contenu">
+                            <i class='bx bx-cookie hob__icone'></i>
+                            <span class="hob__nom">Cuisine et pâtisserie</span>
+                        </div>
+                        <div class="hob__contenu">
+                            <i class='bx bx-desktop hob__icone'></i>
+                            <span class="hob__nom">Informatique : Développement web, domotique et cybersécurité</span>
+                        </div>
+                        <div class="hob__contenu">
+                            <i class='bx bx-run hob__icone'></i>
+                            <span class="hob__nom">Sport : Skate, badminton, course et natation</span>
+                        </div>
+                        <div class="hob__contenu">
+                            <i class='bx bxs-paint-roll hob__icone'></i>
+                            <span class="hob__nom">Peinture et bricolage</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!--========== CERTIFICATS ==========-->
+                <section class="certificats section" id="certificats">
+                    <h2 class="section-titre">Certificats</h2>
+                    <div class="certif__conteneur bd-grid">
+                        <div class="certif__contenu">
+                            <div class="certif__donnee bd-grid">
+                                <a href="img/CESS.jpg" target="_blank" class=".certif__titre">
+                                    <h3 class="certif__titre">Certificat d’enseignement secondaire supérieur (CESS)</h3>
+                                </a>
+                            </div>
+                            <div class="certif__contenu">
+                                <div class="certif__donnee bd-grid">
+                                    <a href="img/Certificat.jpg" target="_blank" class=".certif__titre">
+                                        <h3 class="certif__titre">Certificat sectoriel de préposé en salle - Horeca Formation Wallonie</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--========== REFERENCES (pas pour l'instant) ==========
+                <section class="references section" id="references">
+                    <h2 class="section-titre">Références</h2>
+                    <div class="ref__conteneur bd-grid">
+                        <div class="ref_contenu bd-grid">
+                            <span class="ref__soustitre"></span>Directeur</li>
+                            <h3 class="ref__titre">Monsieur ...</h3>
+                            <ul class="ref__contact">
+                                <li>Téléphone : </li>
+                                <li>E-mail : </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>-->
+            </div>
+        </div>
+    </main>
+    <div id="lightbox">
+        <div></div>
+    </div>
+
+    <!--========== Retourner en haut de la page ==========-->
+    <a href="#" class="hautpage" id="haut-page">
+        <i class='bx bx-chevron-up-square haut__page__icone'></i>
+    </a>
+    <!--
+    <noscript>
+        <p>Pour utiliser ce site, merci d'activer JavaScript.<p>
+    </noscript>
+    -->
+    <script>
+        <!--
+        /*==================== CALCULATEUR AGE ==========================*/
+        function calculate_age(dob) {  
+        var diff_ms = Date.now() - dob.getTime();
+        var age_dt = new Date(diff_ms);
+            
+        return Math.abs(age_dt.getUTCFullYear() - 1970);
+        }
+        
+        $(document).ready(function(){
+            $(".age").text(calculate_age(new Date(1998, 02, 10)));
+        });
+        
+        /*==================== DEROULER/ENROULER MENU ====================*/
+        /*eslint-env es6*/
+        /*pour compatibilité avec Brackets*/
+        const voirMenu = (toggleId, navId) => {
+            const toggle = document.getElementById(toggleId),
+                nav = document.getElementById(navId);
+
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => {
+                    nav.classList.toggle('voir-menu');
+                });
+            };
+        };
+        voirMenu('nav-toggle', 'nav-menu');
+
+
+        /*==================== CACHER MENU TELEPHONE ====================*/
+        //Le menu se ferme quand on appuie sur une icone ou sur le div principal (classe cv)
+        const navLink = document.querySelectorAll('.nav__link');
+        const cv = document.querySelectorAll('.cv');
+
+        function linkAction() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('voir-menu');
+            /*const main = document.getElementByClass('l-main bd-conteneur');
+            main.classList.remove('voir-menu');*/
+        };
+        navLink.forEach(n => n.addEventListener('click', linkAction));
+        cv.forEach(m => m.addEventListener('click', linkAction));
+        window.addEventListener('scroll', linkAction);
+
+        /*==================== lIEN POUR ALLER DE SECTION EN SECTION====================*/
+        const sections = document.querySelectorAll('section[id]');
+
+        function scrollActif() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHauteur = current.offsetHeight;
+                const sectionHaut = current.offsetTop - 50;
+                idSection = current.getAttribute('id');
+
+                if (scrollY > sectionHaut && scrollY <= sectionHaut + sectionHauteur) {
+                    document.querySelector('.nav__menu a[href*=' + idSection + ']').classList.add('lien-menu');
+                } else {
+                    document.querySelector('.nav__menu a[href*=' + idSection + ']').classList.remove('lien-menu');
+                }
+            })
+        };
+        window.addEventListener('scroll', scrollActif);
+
+        /*==================== MONTRER FLECHE HAUT DE PAGE ====================*/
+        function hautPage() {
+            const hautPage = document.getElementById('haut-page');
+            //Quand le scroll est superieur à la moitié hauteur de l'appareil (ici 230px), on ajoute la classe 'montrer-fleche' à la balise a avec la class 'haut-page'
+            if (this.scrollY >= 230) hautPage.classList.add('montrer-fleche');
+            else hautPage.classList.remove('montrer-fleche');
+        };
+        window.addEventListener('scroll', hautPage);
+
+        /*==================== MODE SOMBRE ====================*/
+        const themeBouton = document.getElementById('dark-theme');
+        const darkTheme = 'dark-theme';
+        const iconeTheme = 'bx-sun';
+
+        // Sauvegarder theme précédent
+        const selectTheme = localStorage.getItem('select-theme');
+        const selectIcone = localStorage.getItem('select-icone');
+
+        // Obtenir theme actuel
+        const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+        const getCurrentIcone = () => themeBouton.classList.contains(iconeTheme) ? 'bx-moon' : 'bx-sun';
+
+        // Theme déja sélectionné ? Alors :
+        if (selectTheme) {
+            // Quel theme est actif ?
+            document.body.classList[selectTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+            themeBouton.classList[selectIcone === 'bx-moon' ? 'add' : 'remove'](iconeTheme);
+        };
+
+        // Bouton pour choisir theme
+        themeBouton.addEventListener('click', () => {
+            // Mettre la bonne icone
+            document.body.classList.toggle(darkTheme);
+            themeBouton.classList.toggle(iconeTheme);
+            // Sauvergarder le theme et l'icone
+            localStorage.setItem('select-theme', getCurrentTheme());
+            localStorage.setItem('select-icone', getCurrentIcone());
+        });
+        
+        /*========= Ouvrir fenetre photo de profil avec jQuery inspiré de l'exs du cours==========*/
+        jQuery('.home__img').click(function() {
+            var source = $(this).attr('src');
+            $('#lightbox div').css('background-image', 'url(\'' + source + '\')');
+            $('#lightbox').stop().fadeIn();
+        });
+        $('#lightbox').click(function() {
+            $(this).stop().fadeOut();
+        });
+        $(document).on('keydown', function(e) {
+            console.log(e.keyCode);
+            if (e.keyCode == 27) {
+                $('#lightbox').stop().fadeOut();
+            }
+        });
+
+        /*============================= CV EN PDF ===========================*/
+        /*ATTENTION : CETTE FONCTIONNALITE N'EST POSSIBLE QU'AVEC LE PLUGIN Live Server sur Visual Studio Code, je n'ai malheureusement pas trouver d'autres options convaincantes pour imprimer ce CV*/
+        const cvA = 'cv__a';
+        let boutonPDF = document.getElementById('bouton-pdf');
+        let zonePDF = document.getElementById('zone-pdf');
+        //options du plugin html2pdf : https://ekoopmans.github.io/html2pdf.js/#advanced-usage
+        let opt = {
+            margin: 0,
+            filename: 'cvMikaelDuvillier.pdf',
+            image: {
+                type: 'jpeg',
+                quality: 0.98
+            },
+            html2canvas: {
+                scale: 4
+            },
+            jsPDF: {
+                format: 'a4',
+                orientation: 'portrait'
+            }
+        };
+
+        function cvAquatre() {
+            document.body.classList.add(cvA);
+        };
+
+        function genPDF() {
+            html2pdf(zonePDF, opt)
+        }
+
+        function cvNormal() {
+            document.body.classList.remove(cvA);
+        };
+        // Quand on clique sur le bouton télécharger, 3 fcts s'éxécutent
+        boutonPDF.addEventListener('click', () => {
+            //Ajouter la classe qui permet de réduire la taille du CV et l'imprimer en PDF 
+            cvAquatre();
+            //Générer le PDF
+            genPDF();
+            //Remttre le CV normalement quand le PDF est généré
+            setTimeout(cvNormal, 4000);
+        });
+
+        -->
+    </script>
+</body>
+
+</html>
